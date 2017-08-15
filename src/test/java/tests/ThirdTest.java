@@ -15,7 +15,7 @@ public class ThirdTest {
      from the previous step.
      */
 
-    protected WebDriver driver = null;
+    private WebDriver driver = null;
 
     @Before
     public void setupTest() {

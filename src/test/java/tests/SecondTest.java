@@ -10,11 +10,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class SecondTest {
 
     /**
-     Here we'll declare some variables to replace strings we previously typed out within the @Test section.  This is
-     just to illustrate how to declare and use variables.
+     Here we'll declare some variables to replace strings we previously typed out within the @Test section.
      */
 
-    protected WebDriver driver = null;
+    private WebDriver driver = null;
 
     @Before
     public void setupTest() {
