@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class FirstTestWithMapAndHooks {
+public class FourthTest {
 
     private SetupAndTeardown setupAndTeardown = new SetupAndTeardown();
     private Login login = new Login();

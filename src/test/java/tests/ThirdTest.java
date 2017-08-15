@@ -3,15 +3,16 @@ package tests;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import maps.LoginMap;
+import maps.zzMapBuilder;
 
-public class FirstTestWithVariables {
+public class ThirdTest {
 
     /**
-     Here we'll declare some variables to replace strings we previously typed out within the @Test section.  This is
-     just to illustrate how to declare and use variables.
+     Now we'll take the same code from SecondTest.java and add the idea of a map to replace the 'driver.findElement's
+     from the previous step.
      */
 
     protected WebDriver driver = null;
@@ -25,20 +26,22 @@ public class FirstTestWithVariables {
     @Test
     public void imgurLogin() {
 
+        LoginMap loginMap;
         String url = "https://imgur.com/signin";
         String username = "TestAccountJoey";
         String password = "P@$$w0rd";
-        String signInButton = "//*[@id=\"signin-form\"]/div[2]/button";
 
         driver.get(url);
 
-        driver.findElement(By.id("username")).sendKeys(username);
-        driver.findElement(By.id("password")).sendKeys(password);
-        driver.findElement(By.xpath(signInButton)).click();
+        loginMap = zzMapBuilder.getInstance(driver, LoginMap.class);
+        loginMap.getUsernameField().sendKeys(username);
+        loginMap.getPasswordField().sendKeys(password);
+        loginMap.getSignInButton().click();
     }
 
     @After
     public void teardownTest() {
         driver.close();
     }
+
 }
